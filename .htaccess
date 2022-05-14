@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /
+
+# Protect the htaccess file
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Protect config.php
+<Files config.php>
+Order Allow,Deny
+Deny from all
+</Files>
+
+# Protect .git folder
+RewriteRule ^.git/? - [F,L]
