@@ -18,8 +18,8 @@
     			<thead>
     				<tr>
         				<th>Game</th>
-					<th>Nom</th>
-        				<th>Name</th>
+					<th>Name</th>
+        				<th>Status</th>
         				<th>Access/Port</th>
         				<th>Lock</th>
     				</tr>
