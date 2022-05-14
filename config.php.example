@@ -1,0 +1,69 @@
+<?php
+define(EXTERNAL, "external");
+
+// Set up page information
+$title = 'Server status';
+$serverFQDN = 'example.com';
+$serverIP = '0.0.0.0';
+
+// This will be grep-ed on a 'ps -ax' command.
+// Use "unknown" for unverifiable status
+// Use EXTERNAL for a specific check. Command will be in $gameexternalcheckcommand
+$gamegrep = array(
+	"test1" => "bash",
+	"test2" => "",
+	"test3" => "thisstringdoesnotexist",
+	"test4" => EXTERNAL,
+	"test5" => EXTERNAL,
+	"test6" => EXTERNAL,
+);
+
+// This is the 'external check' that will be done, not ps -ax based.
+// Must still be grep based
+$gameexternalcheckcommand = array(
+	"test4" => "echo -e 's\nu\nc\nc\ne\ns\ns' | grep -E '.*'",
+	"test5" => "",
+	"test6" => "echo -e 'fail' | grep success",
+);
+
+// This is where you set up displayed names.
+$gamename = array(
+	"test1" => "Test number 1 - gamegrep OK",
+	"test2" => "Test number 2 - gamegrep UNKNOWN",
+	"test3" => "Test number 3 - gamegrep KO",
+	"test4" => "Test number 4 - external OK",
+	"test5" => "Test number 5 - external UNKNOWN",
+	"test6" => "Test number 6 - external KO",
+);
+
+// This will allow you to setup the images for the game.
+// For a Steam game, put https://cdn.cloudflare.steamstatic.com/steam/apps/$gameid/header.jpg
+$gameimg = array(
+	"test1" => "Test number 1 - gamegrep OK",
+	"test2" => "Test number 2 - gamegrep UNKNOWN",
+	"test3" => "Test number 3 - gamegrep KO",
+	"test4" => "Test number 4 - external OK",
+	"test5" => "Test number 5 - external UNKNOWN",
+	"test6" => "Test number 6 - external KO",
+);
+
+// Information about ports and access to a server.
+$gameaccess = array(
+	"test1" => "<kbd>12345/udp</kbd>",
+	"test2" => "<kbd>12345/udp</kbd>",
+	"test3" => "<kbd>12345/udp</kbd>",
+	"test4" => "<kbd>12345/udp</kbd>",
+	"test5" => "<kbd>12345/udp</kbd>",
+	"test6" => "<kbd>12345/udp</kbd>",
+);
+
+// Information about security/locks
+$gamepasswd = array(
+	"test1" => "Password locked",
+	"test2" => "Open",
+	"test3" => "Open",
+	"test4" => "Password locked",
+	"test5" => "Open",
+	"test6" => "Open",
+);
+?>
