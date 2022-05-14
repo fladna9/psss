@@ -7,6 +7,9 @@ Existing gaming server status scripts did not fit my requirements.
 ## What?
 
 (Somewhat) easy to read PHP file. No database. No login.
+It looks like this :
+- https://francis.group/demo/index.php or
+- https://francis.group/
 
 ## How?
 
