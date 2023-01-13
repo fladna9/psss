@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Slip') {
+    stage('Branch') {
       parallel {
         stage('Slip') {
           steps {
