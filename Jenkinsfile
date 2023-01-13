@@ -26,7 +26,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'mkdir build; cp * build/;'
+        sh 'mkdir build; cp -r * build/;'
       }
     }
 
