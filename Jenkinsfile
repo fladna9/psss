@@ -26,7 +26,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'mkdir build; cp -r * build/;'
+        sh 'mkdir build; cp -r config.php.example css imgs index.en.php index.fr.php index.php template.en.php template.fr.php build/;'
       }
     }
 
