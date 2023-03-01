@@ -36,5 +36,11 @@ pipeline {
       }
     }
 
+    stage('Autofail') {
+      steps {
+        catchError(buildResult: 'fail', message: 'toto', stageResult: 'failed')
+      }
+    }
+
   }
 }
